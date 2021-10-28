@@ -1,14 +1,4 @@
-const Testing = {
-    tes: 1,
-    tes2: 2,
-    tes3: 3
-};
+import { render } from "react-dom";
+import App from "./App";
 
-const Testing2 = {
-    ...Testing,
-    tes4: 4,
-    tes3: 10
-}
-
-console.log(Testing);
-console.log(Testing2);
+render(<App />, document.getElementById("root"));
