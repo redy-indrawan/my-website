@@ -1,4 +1,5 @@
 import { useState } from "react";
+// import gambar from "../img/1.png";
 
 const Testing = {
     tes: 1,
@@ -20,6 +21,7 @@ const Tes = () => {
     return (
         <div>
             <h3>Current Testing</h3>
+            {/* <img src={gambar} /> */}
             <button onClick={() => setTester(Testing)}>Testing 1</button>
             <button onClick={() => setTester(Testing2)}>Testing 2</button>
 

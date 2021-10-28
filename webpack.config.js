@@ -12,11 +12,26 @@ module.exports = {
     mode: mode,
     target: target,
 
+    output: {
+        assetModuleFilename: "images/[hash][ext][query]",
+        // clean: true, 
+    },
+
     module: {
         rules: [
             {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: "asset",
+            },
+            {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader"],
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options:  {publicPath: ""},
+                    },
+                    "css-loader"
+                ],
             },
             {
                 test: /\.js$/,
@@ -29,10 +44,6 @@ module.exports = {
     },
 
     plugins: [new MiniCssExtractPlugin()],
-
-    // output: {
-    //     clean: true, 
-    // },
 
     // resolve: {
     //     extension: [".js"],
