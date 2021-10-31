@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #fff;
+
+  font-weight: 400;
+  font-size: 1.3125rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  font-weight: 900;
+}
+
+:root {
+  --clr-bg1: #3577ff;
+  --clr-bg2: #2f69ff;
+  --clr-bg3: #4382ff;
+  --clr-bg4: #d9e6ff;
+  --clr-bgDark1: #0a1625;
+  --clr-bgDark2: #2b2d42;
+  --clr-bgWhite: #edf1f5;
+
+  --clr-font1: #6e9edc;
+  --clr-font2: #acd5f2;
+  --clr-font3: #bcbedc;
+  --clr-fontDark1: #516178;
+  --clr-fontDark2: #647380;
+  --clr-fontDark3: #748899;
+  --clr-fontDark4: #8ba0b4;
+  --clr-fontWhite: #f0f3f6;
+
+  --fontTitle: "Amatic SC", cursive;
+  --fontContent: "Josefin Sans", sans-serif;
+}

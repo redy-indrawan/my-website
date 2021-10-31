@@ -1,22 +1,25 @@
 import React from "react";
-import {GlobalStyles} from "./styles/style";
-import { Global } from "@emotion/react";
 
-import Tes from "./components/Tes";
+import Header from "./components/Header/index";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import { Route, HashRouter } from "react-router-dom";
+import { PageContainer } from "./style";
+import { Global } from "@emotion/react";
+import "./App.css"
+
 
 const App = () => {
     return (
-        <>
-            <Global styles={GlobalStyles} />
-            <section></section>
-            <main>
-                <section>
-                    <div>wewewe</div>
-                </section>
-            </main>
-
-            <Tes />
-        </>
+        <HashRouter>
+            <>
+                <Header />
+                <PageContainer>
+                    <Route exact path="/" component={Home}/>      
+                    <Footer />
+                </PageContainer>
+            </>
+        </HashRouter>
     )
 }
 
