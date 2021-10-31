@@ -7,6 +7,7 @@ const Footer = () => {
 
     const FooterContent = styled.p`
         font-family: var(--fontTitle);
+        text-align: center;
     `;
     return (
         <FooterContainer>
