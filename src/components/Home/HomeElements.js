@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const StyledSection = styled.section`
     display: flex;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 85px;
 
     @media (max-width: 1023px) {
         margin-top: 10px;

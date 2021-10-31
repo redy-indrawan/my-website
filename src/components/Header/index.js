@@ -22,11 +22,11 @@ class Header extends Component {
                         Home
                     </StyledNavLink>
                     <StyledNavLink to ="/">
-                        Home
+                        About
                     </StyledNavLink>
-                    <StyledNavLink to ="/">
-                        Home
-                    </StyledNavLink>
+                    {/* <StyledNavLink to ="/anima/anime">
+                        Anima
+                    </StyledNavLink> */}
                 </NavMenu>
             </Nav>
         )

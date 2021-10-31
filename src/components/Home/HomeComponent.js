@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, ContentLeft, ContentRight, ContentTitle, ContentParagraph, ContentImage } from "./HomeElements";
-import MyImg from "../../assets/images/logo.png"
+import MyImg from "../../assets/images/redy-2-color.png"
 
 const useViewport = () => {
   const [width, setWidth] = React.useState(window.innerWidth);

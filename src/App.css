@@ -17,22 +17,8 @@ h3 {
 }
 
 :root {
-  --clr-bg1: #3577ff;
-  --clr-bg2: #2f69ff;
-  --clr-bg3: #4382ff;
-  --clr-bg4: #d9e6ff;
-  --clr-bgDark1: #0a1625;
-  --clr-bgDark2: #2b2d42;
-  --clr-bgWhite: #edf1f5;
-
-  --clr-font1: #6e9edc;
-  --clr-font2: #acd5f2;
-  --clr-font3: #bcbedc;
-  --clr-fontDark1: #516178;
-  --clr-fontDark2: #647380;
-  --clr-fontDark3: #748899;
-  --clr-fontDark4: #8ba0b4;
-  --clr-fontWhite: #f0f3f6;
+  --clr-primary: #553d45;
+  --clr-secondary: #d0a49d;
 
   --fontTitle: "Amatic SC", cursive;
   --fontContent: "Josefin Sans", sans-serif;

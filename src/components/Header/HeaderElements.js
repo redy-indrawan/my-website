@@ -11,8 +11,7 @@ export const Nav = styled.nav`
     padding: 0.2rem calc((100vw - 1200px) / 2);
     z-index: 10;
     font-size: 1.2rem;
-    /* border-bottom: dashed #553d45; */
-    box-shadow: 0px 1px 10px #553d45;
+    box-shadow: 0px 1px 10px var(--clr-primary);
 
     @media (min-width: 960px) and (max-width: 1115px) {
         padding: 0.2rem calc((100vw - 900px) / 2);
@@ -47,7 +46,7 @@ export const ContainerIcons = styled.div`
 
 export const IconBars = styled(FaBars)`
     display: none;
-    color: #553d45;
+    color: var(--clr-primary);
     @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
@@ -62,7 +61,7 @@ export const IconBars = styled(FaBars)`
 
 export const IconTimes = styled(FaTimes)`
     display: none;
-    color: #553d45;
+    color: var(--clr-primary);
     @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
@@ -86,7 +85,7 @@ export const NavMenu = styled.div`
 
 
 export const StyledNavLink = styled(NavLink)`
-    color: #D0A49D;
+    color: var(--clr-secondary);
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -99,6 +98,6 @@ export const StyledNavLink = styled(NavLink)`
     color:black;
     } */
     &:hover {
-        color: #553d45;
+        color: var(--clr-primary);
     }
 `;
