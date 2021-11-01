@@ -1,3 +1,4 @@
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
@@ -5,16 +6,10 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 let mode = "development";
 let target = "web";
 
-// if (process.env.NODE_ENV === "production") {
-//     mode = "production";
-//     target = "browserslist";
-// }
-
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     mode: mode,
-    // mode: isDevelopment ? 'development' : 'production',
     target: target,
 
     output: {
@@ -31,14 +26,6 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    // {
-                    //     loader: MiniCssExtractPlugin.loader,
-                    //     options:  {publicPath: ""},
-                    // },
-                    // "css-loader"
-                    // {
-                    //     loader: "style-loader"
-                    // },
                     "style-loader", "css-loader"
                 ],
             },
@@ -48,12 +35,6 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                 },
-                // use: {
-                //     loader: require.resolve('babel-loader'),
-                //     options: {
-                //      plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean),
-                //     },
-                // }
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -74,10 +55,14 @@ module.exports = {
         new MiniCssExtractPlugin(), 
         new HtmlWebpackPlugin({
             template: "./src/index.html",
-            favicon: "./src/assets/images/logo.png"
+            favicon: "./src/assets/images/redy-2-color-circle.png"
         }),
         new ReactRefreshWebpackPlugin(),
-        // [isDevelopment && new ReactRefreshWebpackPlugin()].filter(Boolean)
+
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'manifest',
+        //     minChunks: Infinity
+        // })
     ],
 
     devtool: "source-map",

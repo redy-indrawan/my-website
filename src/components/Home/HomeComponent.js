@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, ContentLeft, ContentRight, ContentTitle, ContentParagraph, ContentImage } from "./HomeElements";
-import MyImg from "../../assets/images/redy-2-color.png"
+import MyImg from "../../assets/images/redy-2-color-circle.png";
+import "./Home.css";
 
 const useViewport = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -15,14 +16,20 @@ const useViewport = () => {
   return { width };
 }
 
+
 export const HomeComponent = () => {
   const { width } = useViewport();
   const breakpoint = 1023;
 
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
   return width < breakpoint ? 
   <Container>
     <ContentRight>
-      <ContentImage src={MyImg} />
+      <React.Fragment>
+        <ContentImage className="thumb"src={MyImg} alt="Greeting Image Thumb" style={{ visibility: isLoaded ? "hidden" : "visible" }} />
+        <ContentImage className="full" src={MyImg} alt="Greeting Image Full" onLoad={() => {setIsLoaded(true);}} style={{ opacity: isLoaded ? 1 : 0 }} />
+      </React.Fragment>
     </ContentRight>
     <ContentLeft>
       <ContentTitle>
@@ -44,7 +51,10 @@ export const HomeComponent = () => {
       </ContentParagraph>
     </ContentLeft>
     <ContentRight>
-      <ContentImage src={MyImg} />
+      <React.Fragment>
+        <ContentImage className="thumb"src={MyImg} alt="Greeting Image Thumb" style={{ visibility: isLoaded ? "hidden" : "visible" }} />
+        <ContentImage className="full" src={MyImg} alt="Greeting Image Full" onLoad={() => {setIsLoaded(true);}} style={{ opacity: isLoaded ? 1 : 0 }} />
+      </React.Fragment>
     </ContentRight>
   </Container>
 }

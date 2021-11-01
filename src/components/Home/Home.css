@@ -1,0 +1,10 @@
+.full {
+  transition: opacity 400ms ease 0ms;
+  z-index: 3;
+}
+.thumb {
+  filter: blur(20px);
+  transform: scale(1.1);
+  position: absolute;
+  /* transition: visibility 0ms ease 400ms; */
+}

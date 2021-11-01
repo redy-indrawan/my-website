@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Nav, NavLogo, LogoImg, ContainerIcons, IconBars, IconTimes, NavMenu, StyledNavLink } from "./HeaderElements";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/redy-1-color-circle.png";
 
 class Header extends Component {
     state = { clicked: false }
@@ -13,7 +13,7 @@ class Header extends Component {
     render () {
         return (
             <Nav>
-                <NavLogo><LogoImg src={logo} /></NavLogo>
+                <NavLogo><LogoImg src={logo} alt="logo image" /></NavLogo>
                 <ContainerIcons onClick={this.handleClick}>
                     {this.state.clicked ? <IconTimes /> : <IconBars />}
                 </ContainerIcons>
@@ -21,9 +21,9 @@ class Header extends Component {
                     <StyledNavLink to ="/">
                         Home
                     </StyledNavLink>
-                    <StyledNavLink to ="/">
+                    {/* <StyledNavLink to ="/about">
                         About
-                    </StyledNavLink>
+                    </StyledNavLink> */}
                     {/* <StyledNavLink to ="/anima/anime">
                         Anima
                     </StyledNavLink> */}

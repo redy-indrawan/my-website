@@ -46,4 +46,8 @@ export const ContentImage = styled.img`
     width: 100%;
     height: auto;
     max-width: 300px;
+    /* position: absolute; */
+    @media (max-width: 1023px) {
+        margin-left: 5%;
+    }
 `;
