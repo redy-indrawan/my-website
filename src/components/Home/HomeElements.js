@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { ImgWithFallback } from '../ImgWithFallback';
 
 export const StyledSection = styled.section`
     display: flex;
@@ -42,11 +43,21 @@ export const ContentParagraph = styled.p`
     font-size: 18px;
 `;
 
-export const ContentImage = styled.img`
-    width: 100%;
+// export const ContentImage = styled.img`
+//     width: 100%;
+//     height: auto;
+//     max-width: 300px;
+
+//     @media (max-width: 1023px) {
+//         margin-left: 5%;
+//     }
+// `;
+
+export const ContentImage = styled(ImgWithFallback)`
+     width: 100%;
     height: auto;
     max-width: 300px;
-    /* position: absolute; */
+
     @media (max-width: 1023px) {
         margin-left: 5%;
     }

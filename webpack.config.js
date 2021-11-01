@@ -2,6 +2,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { loader } = require("mini-css-extract-plugin");
 
 let mode = "development";
 let target = "web";
@@ -20,8 +21,22 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpe?g|gif|svg)$/i,
+                test: /\.(gif|svg)$/i,
                 type: "asset",
+            },
+            {
+                test: /\.(png|jpe?g|)$/i,
+                use: [
+                    {
+                        loader: 'file-loader'
+                    },
+                    {
+                        loader: "webp-loader",
+                        options: {
+                            quality: 13
+                        }
+                    }
+                ]
             },
             {
                 test: /\.css$/i,

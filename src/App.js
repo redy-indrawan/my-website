@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from 'react'
-
+import React from 'react'
+import loadable from '@loadable/component';
 import { Route, HashRouter } from "react-router-dom";
 import { PageContainer } from "./style";
 import "./App.css"
@@ -10,14 +10,15 @@ import "./App.css"
 import About from "./pages/About";
 import AnimaHome from "./pages/anima/AnimaHome";
 
-const Header = lazy( () => import('./components/header/index.js'));
-const Footer = lazy( () => import('./components/Footer'));
-const Home = lazy( () => import('./pages/Home'));
+const Header = loadable(() => import('./components/header/index.js'));
+const Footer = loadable(() => import('./components/Footer'));
+const Home = loadable(() => import('./pages/Home'));
+
 
 const App = () => {
     return (
         <HashRouter>
-            <Suspense fallback={<p>Loading...</p>}>
+            <>
                 <Header />
                 <PageContainer>
                     <Route exact path="/" component={Home}/>
@@ -25,7 +26,7 @@ const App = () => {
                     {/* <Route exact path="/anima/anime" component={AnimaHome}/> */}
                     <Footer />
                 </PageContainer>
-            </Suspense>
+            </>
         </HashRouter>
     )
 }

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Nav, NavLogo, LogoImg, ContainerIcons, IconBars, IconTimes, NavMenu, StyledNavLink } from "./HeaderElements";
 import logo from "../../assets/images/redy-1-color-circle.png";
+import { HeaderComponent } from "./HeaderComponent";
+
+// const [isLoaded, setIsLoaded] = React.useState(false);
 
 class Header extends Component {
     state = { clicked: false }
@@ -9,11 +12,12 @@ class Header extends Component {
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
     }
-
+    
     render () {
+        
         return (
             <Nav>
-                <NavLogo><LogoImg src={logo} alt="logo image" /></NavLogo>
+                <HeaderComponent />
                 <ContainerIcons onClick={this.handleClick}>
                     {this.state.clicked ? <IconTimes /> : <IconBars />}
                 </ContainerIcons>

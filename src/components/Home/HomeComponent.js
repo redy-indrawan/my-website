@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, ContentLeft, ContentRight, ContentTitle, ContentParagraph, ContentImage } from "./HomeElements";
 import MyImg from "../../assets/images/redy-2-color-circle.png";
-import "./Home.css";
+// import MyImgFallback from "../../assets/images/redy-2-color-circle.png";
+import "../blur.css";
 
 const useViewport = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -29,6 +30,8 @@ export const HomeComponent = () => {
       <React.Fragment>
         <ContentImage className="thumb"src={MyImg} alt="Greeting Image Thumb" style={{ visibility: isLoaded ? "hidden" : "visible" }} />
         <ContentImage className="full" src={MyImg} alt="Greeting Image Full" onLoad={() => {setIsLoaded(true);}} style={{ opacity: isLoaded ? 1 : 0 }} />
+        {/* <ContentImage className="thumb"src={MyImg} fallback={MyImgFallback} alt="Greeting Image Thumb" style={{ visibility: isLoaded ? "hidden" : "visible" }} />
+        <ContentImage className="full" src={MyImg} fallback={MyImgFallback} alt="Greeting Image Full" onLoad={() => {setIsLoaded(true);}} style={{ opacity: isLoaded ? 1 : 0 }} /> */}
       </React.Fragment>
     </ContentRight>
     <ContentLeft>
